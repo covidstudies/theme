@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+    <article id="{{ page.id }}">
+      <h2>{{ page.title | strip_html }}</h2>
+      {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+      <p><time datetime="{{ page.date }}">{{ page.date | date: date_format }}</time></p>
+      <p>{{ content }}</p>
+    </article>
