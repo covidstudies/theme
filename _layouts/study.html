@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+{{ content }}
+
+    <article id="{{ page.id }}">
+      <div>
+        <p>{{ page.title | strip_html }}</p>
+        {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+        {% if page.status != "default" %}
+        <p><mark>{{ page.status }}</mark>&emsp;<time datetime="{{ page.date }}">{{ page.date | date: date_format }}</time></p>
+        {% else %}
+        <p><time datetime="{{ page.date }}">{{ page.date | date: date_format }}</time></p>
+        {% endif %}
+      </div>
+        <h2><a href="{{ page.credit }}" target="_blank">{{ page.de.subtitle }}</a></h2>
+      <p>Authors: {{ page.authors }}</p>
+      <blockquote cite="{{ page.credit }}">
+        <p>{{page.de.description | replace: '"', "'"}}</p>
+      </blockquote>
+      {% if page.de.tags and page.de.tags.size > 0 %}
+      <p>Keywords: {{ page.de.tags | join: ", " }}
+      {% endif %}
+<!--
+      <p>Keywords: <a href="" target="_self">erstes Schlagwort</a>, <a href="" target="_self">zweites</a>, <a href="" target="_self">drittes</a></p>
+-->
+    </article>

@@ -23,16 +23,18 @@ layout: default
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
-<ul>
+<nav>
+  <ul>
   {% if paginator.previous_page %}
-  <li>
-    <a href="{{ paginator.previous_page_path | absolute_url }}">&larr; Neuere Studien</a>
-  </li>
+    <li>
+      <a href="{{ paginator.previous_page_path | absolute_url }}">&larr; Neuere Studien</a>
+    </li>
   {% endif %}
   {% if paginator.next_page %}
-  <li>
-    <a href="{{ paginator.next_page_path | absolute_url }}">Ältere Studien &rarr;</a>
-  </li>
-  {% endif %}
-</ul>
+    <li>
+      <a href="{{ paginator.next_page_path | absolute_url }}">Ältere Studien &rarr;</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
 {% endif %}
