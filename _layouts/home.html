@@ -27,12 +27,12 @@ layout: default
   <ul>
   {% if paginator.previous_page %}
     <li>
-      <a href="{{ paginator.previous_page_path | absolute_url }}">&larr; Neuere Studien</a>
+      <a href="{{ paginator.previous_page_path | absolute_url }}">&larr; Neuerer Beitrag</a>
     </li>
   {% endif %}
   {% if paginator.next_page %}
     <li>
-      <a href="{{ paginator.next_page_path | absolute_url }}">Ältere Studien &rarr;</a>
+      <a href="{{ paginator.next_page_path | absolute_url }}">Älterer Beitrag &rarr;</a>
     </li>
     {% endif %}
   </ul>
