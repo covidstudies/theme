@@ -1,0 +1,27 @@
+---
+common-css:
+  - "/assets/css/coronastudies.css"
+common-ext-css:
+  - "https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.css"
+common-ext-js:
+  - href: "https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.js"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head_en.html type="page" %}
+
+<body>
+{% include header_en.html type="page" %}
+
+<main>
+{{ content }}
+</main>
+
+{% include footer.html %}
+{% include footer-scripts.html %}
+
+</body>
+
+</html>

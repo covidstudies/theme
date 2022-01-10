@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default_en
 ---
 
 {{ content }}
@@ -27,12 +27,12 @@ layout: default
   <ul>
   {% if paginator.previous_page %}
     <li>
-      <a href="{{ paginator.previous_page_path | absolute_url }}">&larr; Neuere Beiträge</a>
+      <a href="{{ paginator.previous_page_path | absolute_url }}">&larr; Newer Posts</a>
     </li>
   {% endif %}
   {% if paginator.next_page %}
     <li>
-      <a href="{{ paginator.next_page_path | absolute_url }}">Ältere Beiträge &rarr;</a>
+      <a href="{{ paginator.next_page_path | absolute_url }}">Older Posts &rarr;</a>
     </li>
     {% endif %}
   </ul>
