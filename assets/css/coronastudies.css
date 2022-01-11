@@ -137,8 +137,9 @@ header details[open] {
 }
 
 header details > summary {
-  font-size: 200%;
-  line-height: 1.25rem !important;
+  /* font-size: 200%;
+  line-height: 1.25rem !important; */
+  transform: translateY(-6px);
   text-align: right;
   color: blue;
   margin-bottom: 5rem;
