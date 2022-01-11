@@ -18,7 +18,7 @@ layout: default
         <p><time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time></p>
         {% endif %}
       </div>
-        <h2><a href="{{ post.credit }}" target="_blank">{{ post.de.subtitle }}</a></h2>
+        <h2><a href="{{ post.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ post.de.subtitle }}</a></h2>
       <p>Authors: {{ post.authors }}</p>
       <blockquote cite="{{ post.credit }}">
         <p>{{post.de.description | truncate: 240 | replace: '"', "'"}}&nbsp;<span><a href="{{ post.url }}.html">weiterlesen</a></span>.</p>
@@ -26,9 +26,6 @@ layout: default
       {% if post.de.tags and post.de.tags.size > 0 %}
       <p>Keywords: {{ post.de.tags | join: ", " }}
       {% endif %}
-<!--
-      <p>Keywords: <a href="" target="_self">erstes Schlagwort</a>, <a href="" target="_self">zweites</a>, <a href="" target="_self">drittes</a></p>
--->
     </article>
 
 {% endfor %}

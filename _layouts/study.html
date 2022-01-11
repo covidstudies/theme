@@ -14,7 +14,7 @@ layout: default
         <p><time datetime="{{ page.date }}">{{ page.date | date: date_format }}</time></p>
         {% endif %}
       </div>
-        <h2><a href="{{ page.credit }}" target="_blank">{{ page.de.subtitle }}</a></h2>
+        <h2><a href="{{ page.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ page.de.subtitle }}</a></h2>
       <p>Authors: {{ page.authors }}</p>
       <blockquote cite="{{ page.credit }}">
         <p>{{page.de.description | replace: '"', "'"}}</p>
@@ -22,7 +22,8 @@ layout: default
       {% if page.de.tags and page.de.tags.size > 0 %}
       <p>Keywords: {{ page.de.tags | join: ", " }}
       {% endif %}
-<!--
-      <p>Keywords: <a href="" target="_self">erstes Schlagwort</a>, <a href="" target="_self">zweites</a>, <a href="" target="_self">drittes</a></p>
--->
     </article>
+
+    <aside>
+      <p>Übersetzt mit <a href="https://www.deepl.com" target="_blank">DeepL</a>.</p>
+    </aside>

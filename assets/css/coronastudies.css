@@ -37,7 +37,8 @@ img, video, audio {
   border: none;
 }
 
-h2, h3, h4, h5, h6, h2 *, h3 *, h4 *, h5 *, h6 * {
+h1, h2, h3, h4, h5, h6, h2 *, h3 *, h4 *, h5 *, h6 * {
+  vertical-align: top;
   text-transform: uppercase;
   margin: 0;
 }
@@ -114,8 +115,6 @@ header h1 {
   position: absolute;
   top: 1.25rem;
   left: 6.25rem;
-  text-transform: uppercase;
-  margin: 0;
 }
 
 header span::before {
@@ -188,6 +187,15 @@ article:nth-child(odd) {
 article div:first-child {
   display: flex;
   justify-content: space-between;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;  
+}
+
+article div:first-child p {
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;  
 }
 
 article div:first-child p:last-child {
@@ -252,10 +260,11 @@ address li:first-child {
   display: block;
 }
 
+/* Icons */
+
 div.icon {
   display: inline-block !important;
-  width: 2.5rem;
-  height: 2.5rem;
+  fill: blue;
 }
 
 /* Responsive Webdesign */
