@@ -211,6 +211,16 @@ article p:last-child {
   margin-bottom: 0;
 }
 
+.study-content {
+  overflow: hidden;
+  height: 6em;
+}
+
+.study-more:checked + div {
+  height: auto;
+}
+
+
 main nav {
   margin: 0 auto;
   padding: 0 1rem;

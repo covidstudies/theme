@@ -21,7 +21,10 @@ layout: default
         <h2><a href="{{ post.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ post.de.subtitle }}</a></h2>
       <p>Authors: {{ post.authors }}</p>
       <blockquote cite="{{ post.credit }}">
-        <p>{{post.de.description | truncate: 240 | replace: '"', "'"}}&nbsp;<span><a href="{{ post.url }}.html">weiterlesen</a></span>.</p>
+        <input class="study-more" type="checkbox"> Weiterlesen...</input>
+        <div class="study-content">
+          <p id="content">{{post.de.description | replace: '"', "'"}}</p>
+        <div>
       </blockquote>
       {% if post.de.tags and post.de.tags.size > 0 %}
       <p>Keywords: {{ post.de.tags | join: ", " }}
