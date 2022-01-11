@@ -232,6 +232,15 @@ main aside {
   max-width: calc(660px + 4rem);
 }
 
+.study-content {
+  overflow: hidden;
+  height: 5em;
+}
+
+.study-more:checked + div {
+  height: auto;
+}
+
 /* Footer */
 
 footer {
