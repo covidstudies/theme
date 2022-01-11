@@ -24,8 +24,8 @@
   {% endcapture %}
 
   {% capture description %}
-    {%- if page.de.share-description -%}
-      {{ page.de.share-description | strip_html | xml_escape }}
+    {%- if page.en.share-description -%}
+      {{ page.en.share-description | strip_html | xml_escape }}
     {%- elsif page.subtitle -%}
       {{ page.subtitle | strip_html | xml_escape }}
     {%- else -%}
@@ -35,11 +35,11 @@
   {% endcapture %}
 
   {%- assign keywords = '' | split: '' -%}
-  {%- if page.de.tags.size > 0 -%}
-    {%- assign keywords = keywords | concat: page.de.tags -%}
+  {%- if page.en.tags.size > 0 -%}
+    {%- assign keywords = keywords | concat: page.en.tags -%}
   {%- endif -%}
-  {%- if page.de.categories.size > 0 -%}
-    {%- assign keywords = keywords | concat: page.de.categories -%}
+  {%- if page.group.size > 0 -%}
+    {%- assign keywords = keywords | concat: page.group -%}
   {%- endif -%}
   {%- assign keywords = keywords | join: ", " -%}
 
