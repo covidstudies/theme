@@ -204,6 +204,15 @@ article p:last-child {
   margin-bottom: 0;
 }
 
+.study-content {
+  overflow: hidden;
+  height: 6em;
+}
+
+.study-more:active + div {
+  height: auto;
+}
+
 main nav {
   margin: 0 auto;
   max-width: calc(660px + 4rem);
