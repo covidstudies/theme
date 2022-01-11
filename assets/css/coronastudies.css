@@ -38,6 +38,7 @@ img, video, audio {
 }
 
 h2, h3, h4, h5, h6, h2 *, h3 *, h4 *, h5 *, h6 * {
+  vertical-align: top;
   text-transform: uppercase;
   margin: 0;
 }
@@ -51,12 +52,6 @@ p, ul, ol, dl, table {
 
 blockquote {
   margin: 0;
-}
-
-span {
-  -webkit-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
 }
 
 a,
@@ -102,22 +97,26 @@ header {
   top: 0;
   left: 50%;
   width: 100%;
+  min-height: 5rem;
   max-width: calc(660px + 4rem);
   transform: translateX(-50%);
   z-index: 666;
 }
 
 header figure {
-  display: inline-block;
-  max-width: 100px;
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  max-width: 5rem;
   margin: 0;
 }
 
 header h1 {
-  display: inline-block;
+  position: absolute;
+  top: 1.25rem;
+  left: 6.25rem;
   text-transform: uppercase;
-  margin: 1.25rem 0;
-  vertical-align: top;
+  margin: 0;
 }
 
 header span::before {
@@ -129,6 +128,7 @@ header details {
   top: 0;
   left: 0;
   width: 100%;
+  height: 5rem;
   padding: 1.25rem 1rem;
   z-index: -1;
 }
@@ -204,17 +204,9 @@ article p:last-child {
   margin-bottom: 0;
 }
 
-.study-content {
-  overflow: hidden;
-  height: 6em;
-}
-
-.study-more:checked + div {
-  height: auto;
-}
-
 main nav {
   margin: 0 auto;
+  padding: 0 1rem;
   max-width: calc(660px + 4rem);
 }
 
@@ -224,7 +216,13 @@ main nav ul {
   vertical-align: middle;
   list-style: none;
   padding: 0;
-  margin: 1.25rem 1rem;
+  margin: 1.25rem 0;
+}
+
+main aside {
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+  max-width: calc(660px + 4rem);
 }
 
 /* Footer */
@@ -253,6 +251,12 @@ address li {
 
 address li:first-child {
   display: block;
+}
+
+div.icon {
+  display: inline-block !important;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 /* Responsive Webdesign */

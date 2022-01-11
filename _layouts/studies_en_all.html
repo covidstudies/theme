@@ -21,7 +21,7 @@ layout: default_en
         <h2><a href="{{ post.credit }}" target="_blank">{{ post.en.subtitle }}</a></h2>
       <p>Authors: {{ post.authors }}</p>
       <blockquote cite="{{ post.credit }}">
-        <p>{{post.en.description | truncate: 160 | replace: '"', "'"}} <span><a href="{{ post.url }}.html">read more</a></span>.</p>
+        <p>{{post.en.description | truncate: 240 | replace: '"', "'"}}&nbsp;<span><a href="{{ post.url }}.html">read more</a></span>.</p>
       </blockquote>
       {% if post.en.tags and post.en.tags.size > 0 %}
       <p>Keywords: {{ post.en.tags | join: ", " }}

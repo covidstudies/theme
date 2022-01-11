@@ -21,12 +21,7 @@ layout: default
         <h2><a href="{{ post.credit }}" target="_blank">{{ post.de.subtitle }}</a></h2>
       <p>Authors: {{ post.authors }}</p>
       <blockquote cite="{{ post.credit }}">
-        <input class="study-more" type="checkbox"> Weiterlesen...</input>
-        <!-- <button class="study-more" type="button">Weiterlesen...</button> -->
-        <div class="study-content">
-          <p id="content">{{post.de.description | replace: '"', "'"}}</p>
-        <div>
-        <br/>
+        <p>{{post.de.description | truncate: 240 | replace: '"', "'"}}&nbsp;<span><a href="{{ post.url }}.html">weiterlesen</a></span>.</p>
       </blockquote>
       {% if post.de.tags and post.de.tags.size > 0 %}
       <p>Keywords: {{ post.de.tags | join: ", " }}
@@ -37,3 +32,7 @@ layout: default
     </article>
 
 {% endfor %}
+
+    <aside>
+      <p>Übersetzt mit <a href="https://www.deepl.com" target="_blank">DeepL</a>.</p>
+    </aside>
