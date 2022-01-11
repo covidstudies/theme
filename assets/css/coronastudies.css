@@ -209,7 +209,7 @@ article p:last-child {
   height: 6em;
 }
 
-.study-more:active + div {
+.study-more:checked + div {
   height: auto;
 }
 
