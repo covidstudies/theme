@@ -23,7 +23,7 @@ layout: default
       <blockquote id="{{ post.id }}-content" cite="{{ post.credit }}">
         <p>{{post.de.description | replace: '"', "'"}}</p>
       </blockquote>
-      <button onclick ="document.getElementById('{{ post.id }}-content').style.height='auto'">weiterlesen</button>
+      <button onclick ="document.getElementById('{{ post.id }}-content').style.height='auto';this.hidden=true">weiterlesen</button>
       {% if post.de.tags and post.de.tags.size > 0 %}
       <p>Keywords: {{ post.de.tags | join: ", " }}
       {% endif %}

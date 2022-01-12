@@ -12,12 +12,13 @@ layout: default_en
       <h2>{{ post.title | strip_html }}</h2>
       {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
       <p><time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time></p>
-      <p>{% assign excerpt_length = site.excerpt_length | default: 50 %}
+      {{ post.content }}
+      <!-- <p>{% assign excerpt_length = site.excerpt_length | default: 50 %}
       {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
       {% assign excerpt_word_count = post.excerpt | number_of_words %}
       {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
         <span><a href="{{ post.url | absolute_url }}">weiterlesen</a></span>.
-      {% endif %}</p>
+      {% endif %}</p> -->
     </article>
 
 {% endfor %}
