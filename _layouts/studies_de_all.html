@@ -1,5 +1,9 @@
 ---
 layout: default
+common-ext-js:
+  - href: "https://cdnjs.cloudflare.com/ajax/libs/cuttr/1.3.2/cuttr.min.js"
+common-js:
+  - "/assets/js/studies.js"
 ---
 
 {{ content }}
@@ -20,10 +24,13 @@ layout: default
       </div>
         <h2><a href="{{ post.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ post.de.subtitle }}</a></h2>
       <p>Authors: {{ post.authors }}</p>
-      <blockquote id="{{ post.id }}-content" cite="{{ post.credit }}">
+      <!-- <blockquote id="{{ post.id }}-content" cite="{{ post.credit }}">
         <p>{{post.de.description | replace: '"', "'"}}</p>
       </blockquote>
-      <button onclick ="document.getElementById('{{ post.id }}-content').style.height='auto';this.hidden=true">weiterlesen</button>
+      <button onclick ="document.getElementById('{{ post.id }}-content').style.height='auto';this.hidden=true">weiterlesen</button> -->
+      <blockquote cite="{{ post.credit }}">
+        <p class="content">{{post.de.description | replace: '"', "'"}}</p>
+      </blockquote>
       {% if post.de.tags and post.de.tags.size > 0 %}
       <p>Keywords: {{ post.de.tags | join: ", " }}
       {% endif %}

@@ -55,8 +55,6 @@ p, ul, ol, dl, table {
 }
 
 blockquote {
-  overflow: hidden;
-  height: 5.9em;
   margin: 0;
 }
 
