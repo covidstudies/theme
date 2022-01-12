@@ -11,7 +11,25 @@ layout: default
     <article id="{{ post.id }}">
       <h2>{{ post.title | strip_html }}</h2>
       {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
-      <p><time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time></p>
+      <p><time datetime="{{ post.date }}">
+{% assign m = post.date | date: "%-m" %}
+{{ post.date | date: "%-d" }}.
+ {% case m %}
+  {% when '1' %}Januar
+  {% when '2' %}Februar
+  {% when '3' %}M&auml;rz
+  {% when '4' %}April
+  {% when '5' %}Mai
+  {% when '6' %}Juni
+  {% when '7' %}Juli
+  {% when '8' %}August
+  {% when '9' %}September
+  {% when '10' %}Oktober
+  {% when '11' %}November
+  {% when '12' %}Dezember
+{% endcase %}
+{{ post.date | date: "%Y" }}
+</time></p>
       {{ post.content }}
       <!-- <p>{% assign excerpt_length = site.excerpt_length | default: 50 %}
       {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
@@ -26,6 +44,9 @@ layout: default
 {% if paginator.total_pages > 1 %}
 <nav>
   <ul>
+  {% if paginator.page  == 1 %}
+    <li></li>
+  {% endif %}
   {% if paginator.previous_page %}
     <li>
       <a href="{{ paginator.previous_page_path | absolute_url }}">&larr; Neuere Beiträge</a>
