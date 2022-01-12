@@ -26,6 +26,10 @@ body {
   background-color: whitesmoke;
 }
 
+button {
+  margin-top: 10px
+}
+
 figure {
   margin: 1.25rem 0;
 }
@@ -51,6 +55,8 @@ p, ul, ol, dl, table {
 }
 
 blockquote {
+  overflow: hidden;
+  height: 5.9em;
   margin: 0;
 }
 
@@ -212,16 +218,6 @@ article p:last-child {
   margin-bottom: 0;
 }
 
-.study-content {
-  overflow: hidden;
-  height: 6em;
-}
-
-.study-more:checked + div {
-  height: auto;
-}
-
-
 main nav {
   margin: 0 auto;
   padding: 0 1rem;
@@ -241,15 +237,6 @@ main aside {
   margin: 2.5rem auto;
   padding: 0 1rem;
   max-width: calc(660px + 4rem);
-}
-
-.study-content {
-  overflow: hidden;
-  height: 5em;
-}
-
-.study-more:checked + div {
-  height: auto;
 }
 
 /* Footer */
