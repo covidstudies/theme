@@ -23,9 +23,10 @@ common-js:
         {% endif %}
       </div>
         <h2><a href="{{ post.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ post.de.subtitle }}</a></h2>
-      <p>Authors: {{ post.authors }}</p>
+      <p>Autoren: {{ post.authors }}</p>
       <blockquote cite="{{ post.credit }}">
         <p class="content">{{post.de.description | replace: '"', "'"}}</p>
+        <p>Schlüsselworte: {{post.de.keywords | replace: '"', "'"}}</p>
       </blockquote>
       {% if post.de.tags and post.de.tags.size > 0 %}
       <p>Keywords: {{ post.de.tags | join: ", " }}
