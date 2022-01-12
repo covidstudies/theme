@@ -19,27 +19,27 @@
     {%- elsif page.title -%}
       {{ page.title | strip_html | xml_escape  }}
     {%- else -%}
-      {{ site.title | strip_html | xml_escape }}
+      {{ site.en.title | strip_html | xml_escape }}
     {%- endif -%}
   {% endcapture %}
 
   {% capture description %}
-    {%- if page.en.share-description -%}
-      {{ page.en.share-description | strip_html | xml_escape }}
+    {%- if page.share-description -%}
+      {{ page.share-description | strip_html | xml_escape }}
     {%- elsif page.subtitle -%}
       {{ page.subtitle | strip_html | xml_escape }}
     {%- else -%}
-      {%- assign excerpt_length = site.excerpt_length | default: 50 -%}
-      {{ page.content | strip_html | xml_escape | truncatewords: excerpt_length | strip }}
+      {{ site.en.description | strip_html | xml_escape }}
     {%- endif -%}
   {% endcapture %}
 
   {%- assign keywords = '' | split: '' -%}
+  {%- assign group = page.group | split: '' -%}
   {%- if page.en.tags.size > 0 -%}
     {%- assign keywords = keywords | concat: page.en.tags -%}
   {%- endif -%}
-  {%- if page.group.size > 0 -%}
-    {%- assign keywords = keywords | concat: page.group -%}
+  {%- if group.size > 0 -%}
+    {%- assign keywords = keywords | concat: group -%}
   {%- endif -%}
   {%- assign keywords = keywords | join: ", " -%}
 
