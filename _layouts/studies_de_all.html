@@ -24,10 +24,6 @@ common-js:
       </div>
         <h2><a href="{{ post.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ post.de.subtitle }}</a></h2>
       <p>Authors: {{ post.authors }}</p>
-      <!-- <blockquote id="{{ post.id }}-content" cite="{{ post.credit }}">
-        <p>{{post.de.description | replace: '"', "'"}}</p>
-      </blockquote>
-      <button onclick ="document.getElementById('{{ post.id }}-content').style.height='auto';this.hidden=true">weiterlesen</button> -->
       <blockquote cite="{{ post.credit }}">
         <p class="content">{{post.de.description | replace: '"', "'"}}</p>
       </blockquote>
