@@ -1,0 +1,25 @@
+---
+layout: default_en
+---
+
+    <article id="{{ page.id }}">
+      <h2>{{ page.title | strip_html }}</h2>
+      <p><time datetime="{{ post.date }}">{{ post.date | date: "%d. %B %Y" }}</time></p>
+      {{ content }}
+    </article>
+<nav>
+  <ul>
+  {% if page.next.url %}
+    <li>
+      <a href="{{ page.next.url | absolute_url }}">&larr; newer posts</a>
+    </li>
+  {% else %}
+    <li></li>
+  {% endif %}
+  {% if page.previous.url %}
+    <li>
+      <a href="{{ page.previous.url | absolute_url }}">older posts &rarr;</a>
+    </li>
+  {% endif %}
+  </ul>
+</nav>
