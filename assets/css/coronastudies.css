@@ -23,7 +23,7 @@
 body {
   margin: 0;
   padding: 0 1rem;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 button {
@@ -94,7 +94,7 @@ mark {
 }
 
 ::selection {
-  background-color: lime;
+  background-color: yellow;
 }
 
 /* Header */
@@ -103,25 +103,28 @@ header {
   position: fixed;
   top: 0;
   left: 50%;
-  width: 100%;
-  min-height: 5rem;
+  width: calc(100% - 2rem);
   max-width: calc(660px + 4rem);
+  min-height: 6.25rem;
   transform: translateX(-50%);
   z-index: 666;
+  background-color: white;
+  border-bottom: 1px dotted black;
 }
 
 header figure {
   position: absolute;
-  top: 0;
-  left: 1rem;
-  max-width: 5rem;
+  top: calc(1.25rem - (3.75rem / 100 * 18));
+  left: 0;
+  width: calc(3.75rem + (3.75rem / 100 * 36));
   margin: 0;
 }
 
 header h1 {
   position: absolute;
   top: 1.25rem;
-  left: 6.25rem;
+  left: calc(3.75rem + (3.75rem / 100 * 36));
+  margin: 0;
 }
 
 header span::before {
@@ -130,28 +133,29 @@ header span::before {
 
 header details {
   position: absolute;
-  top: 0;
+  top: 1.25rem;
   left: 0;
   width: 100%;
-  height: 5rem;
-  padding: 1.25rem 1rem;
+  height: 6.25rem;
+  padding: 0;
   z-index: -1;
 }
 
 header details[open] {
   height: auto;
   min-height: 100vh;
-  background-color: whitesmoke;
-  animation: fadeIn 2s;
+  background-color: white;
 }
 
 header details > summary {
-  /* font-size: 200%;
-  line-height: 1.25rem !important; */
-  transform: translateY(-6px);
+  transform: translateY(-7px);
   text-align: right;
   color: blue;
-  margin-bottom: 5rem;
+  margin-bottom: calc(3.75rem + 8px);
+}
+
+header details nav {
+  border-bottom: 1px dotted black;
 }
 
 header details[open] nav ul {
@@ -171,33 +175,18 @@ header ::selection {
 /* Main */
 
 main {
-  margin-top: calc(5rem + 1.25rem);
+  margin-top: 6.25rem;
 }
 
 article {
-  margin: 0 auto 2.5rem;
-  padding: 1.25rem 1rem;
+  margin: 0 auto ;
+  padding: 2.5rem 0;
   max-width: calc(660px + 4rem);
-  background-color: white;
-  border: 1px dotted black;
-  animation: fadeIn 2s;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  border-bottom: 1px dotted black;
 }
 
 article:last-of-type {
   margin-bottom: 0;
-}
-
-article:nth-child(even) {
-  border-radius: 1rem 0 1rem 1rem;
-}
-
-article:nth-child(odd) {
-  border-radius: 1rem 1rem 1rem 0;
 }
 
 article div:first-child {
@@ -251,15 +240,19 @@ main aside {
 /* Footer */
 
 footer {
-  margin: 0 auto;
-  padding: 0 1rem;  
+  margin: 2.5rem auto;
+  padding: 0;  
   max-width: calc(660px + 4rem);
 }
 
 /* Address */
 
 address {
-  margin: 5rem 0rem;
+  margin: 2.5rem 0 calc(5rem - 18px);
+}
+
+footer address {
+  margin-top: 0;
 }
 
 address ul {
@@ -287,29 +280,22 @@ div.icon {
 
 @media screen and (max-width: calc(660px + 4rem)) {
 
-  * {
-    font-size: 16px;
-  }
-
-  body {
-    background-color: white;
-    padding: 0;
-  }
-
   header span {
     display: none;
     content: none;
   }
 
-  article {
-    margin: 0 auto;
-    border: none;
-    border-bottom: 1px dotted black;
+}
+
+@media screen and (max-width: 580px) {
+
+  * {
+    font-size: 16px;
   }
 
-  article:nth-child(even),
-  article:nth-child(odd) {
-    border-radius: 0;
+  header details > summary {
+    transform: translateY(-8px);
+    margin-bottom: calc(3.75rem + 2px);
   }
 
 }
