@@ -4,10 +4,9 @@ layout: default
 
     <article id="{{ page.id }}">
       <h2>{{ page.title | strip_html }}</h2>
-      {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
-      <p><time datetime="{{ page.date }}">{{ page.date | date: date_format }}
-{% assign m = post.date | date: "%-m" %}
-{{ post.date | date: "%-d" }}.
+      <p><time datetime="{{ page.date }}">
+{% assign m = page.date | date: "%-m" %}
+{{ page.date | date: "%-d" }}.
  {% case m %}
   {% when '1' %}Januar
   {% when '2' %}Februar
@@ -22,7 +21,23 @@ layout: default
   {% when '11' %}November
   {% when '12' %}Dezember
 {% endcase %}
-{{ post.date | date: "%Y" }}
+{{ page.date | date: "%Y" }}
 </time></p>
-      <p>{{ content }}</p>
+      {{ content }}
     </article>
+<nav>
+  <ul>
+  {% if page.next.url %}
+    <li>
+      <a href="{{ page.next.url | absolute_url }}">&larr; Neuere Beiträge</a>
+    </li>
+  {% else %}
+    <li></li>
+  {% endif %}
+  {% if page.previous.url %}
+    <li>
+      <a href="{{ page.previous.url | absolute_url }}">Ältere Beiträge &rarr;</a>
+    </li>
+  {% endif %}
+  </ul>
+</nav>

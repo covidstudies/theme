@@ -4,13 +4,10 @@ layout: default
 
 {{ content }}
 
-{% assign posts = paginator.posts | default: site.posts %}
-
-{% for post in posts %}
+{% assign post = site.posts[0] %}
 
     <article id="{{ post.id }}">
       <h2>{{ post.title | strip_html }}</h2>
-      {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
       <p><time datetime="{{ post.date }}">
 {% assign m = post.date | date: "%-m" %}
 {{ post.date | date: "%-d" }}.
@@ -31,32 +28,21 @@ layout: default
 {{ post.date | date: "%Y" }}
 </time></p>
       {{ post.content }}
-      <!-- <p>{% assign excerpt_length = site.excerpt_length | default: 50 %}
-      {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
-      {% assign excerpt_word_count = post.excerpt | number_of_words %}
-      {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
-        <span><a href="{{ post.url | absolute_url }}">weiterlesen</a></span>.
-      {% endif %}</p> -->
     </article>
 
-{% endfor %}
-
-{% if paginator.total_pages > 1 %}
 <nav>
   <ul>
-  {% if paginator.page  == 1 %}
+  {% if post.next.url %}
+    <li>
+      <a href="{{ post.next.url | absolute_url }}">&larr; Neuere Beiträge</a>
+    </li>
+  {% else %}
     <li></li>
   {% endif %}
-  {% if paginator.previous_page %}
+  {% if post.previous.url %}
     <li>
-      <a href="{{ paginator.previous_page_path | absolute_url }}">&larr; Neuere Beiträge</a>
+      <a href="{{ post.previous.url | absolute_url }}">Ältere Beiträge &rarr;</a>
     </li>
   {% endif %}
-  {% if paginator.next_page %}
-    <li>
-      <a href="{{ paginator.next_page_path | absolute_url }}">Ältere Beiträge &rarr;</a>
-    </li>
-    {% endif %}
   </ul>
 </nav>
-{% endif %}
