@@ -25,7 +25,7 @@ common-js:
         <h2><a href="{{ post.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ post.en.subtitle }}</a></h2>
       <p>Authors: {{ post.authors }}</p>
       <blockquote cite="{{ post.credit }}">
-        <p class="content">{{post.en.description | replace: '"', "'"}}</p>
+        <p class="content_en">{{post.en.description | replace: '"', "'"}}</p>
       </blockquote>
       {% if post.en.tags and post.en.tags.size > 0 %}
       <p>Keywords: {{ post.en.tags | join: ", " }}

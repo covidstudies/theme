@@ -27,7 +27,10 @@ body {
 }
 
 button {
-  margin-top: 10px
+  color: blue;
+  background-color: white;
+  border: none;
+  padding: 0;
 }
 
 figure {
@@ -52,6 +55,21 @@ p, ul, ol, dl, table {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
+}
+p.content::before {
+  content: '„';
+}
+
+p.content::after {
+  content: '“';
+}
+
+p.content_en::before {
+  content: '“';
+}
+
+p.content_en::after {
+  content: '”';
 }
 
 blockquote {
@@ -136,7 +154,8 @@ header details {
 }
 
 header details[open] {
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   background-color: whitesmoke;
 }
 
@@ -175,6 +194,12 @@ article {
   max-width: calc(660px + 4rem);
   background-color: white;
   border: 1px dotted black;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 article:last-of-type {
@@ -248,7 +273,7 @@ footer {
 /* Address */
 
 address {
-  margin: 5rem 0 2.5rem;
+  margin: 5rem 0rem;
 }
 
 address ul {
