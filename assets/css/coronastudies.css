@@ -56,21 +56,6 @@ p, ul, ol, dl, table {
   -ms-hyphens: auto;
   hyphens: auto;
 }
-p.content::before {
-  content: '„';
-}
-
-p.content::after {
-  content: '“';
-}
-
-p.content_en::before {
-  content: '“';
-}
-
-p.content_en::after {
-  content: '”';
-}
 
 blockquote {
   margin: 0;
@@ -157,6 +142,7 @@ header details[open] {
   height: auto;
   min-height: 100vh;
   background-color: whitesmoke;
+  animation: fadeIn 2s;
 }
 
 header details > summary {

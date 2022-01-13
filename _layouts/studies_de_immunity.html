@@ -17,18 +17,18 @@ common-js:
         <p>{{ post.title | strip_html }}</p>
         {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
         {% if post.status != "default" %}
-        <p><mark>{{ post.status }}</mark>&emsp;<time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time></p>
+        <p>&emsp;<mark>{{ post.status }}</mark>&emsp;<time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time></p>
         {% else %}
-        <p><time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time></p>
+        <p>&emsp;<time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time></p>
         {% endif %}
       </div>
         <h2><a href="{{ post.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ post.de.subtitle }}</a></h2>
-      <p>Authors: {{ post.authors }}</p>
+      <p>Autoren: {{ post.authors }}</p>
       <blockquote cite="{{ post.credit }}">
-        <p class="content">{{post.de.description | replace: '"', "'"}}</p>
+        <p class="content">„{{post.de.description | replace: '"', "'"}}“</p>
       </blockquote>
       {% if post.de.tags and post.de.tags.size > 0 %}
-      <p>Keywords: {{ post.de.tags | join: ", " }}
+      <p>Schlüsselworte: {{ post.de.tags | join: ", " }}
       {% endif %}
     </article>
 
