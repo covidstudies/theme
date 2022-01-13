@@ -4,7 +4,7 @@ new Cuttr('.content', {
     length: 30,
     readMore: true,
     readMoreText: 'weiterlesen.',
-    readLessText: ' Text schließen.',
+    readLessText: ' – Schließen.',
     readMoreBtnPosition: 'inside',
 });
 
@@ -13,12 +13,7 @@ new Cuttr('.content_en', {
     truncate: 'words',
     length: 30,
     readMore: true,
-    // Achtung Test!
-    readMoreText: '<div data-icon="ei-plus" data-size="s"></div>',
-    readLessText: '<div data-icon="ei-minus" data-size="s"></div>',
+    readMoreText: 'read more.',
+    readLessText: ' – Close.',
     readMoreBtnPosition: 'inside',
-    readMoreBtnTag: '',
-    readMoreBtnSelectorClass: '',
-    readMoreBtnAdditionalClasses: '',
-    // Test Ende
 });

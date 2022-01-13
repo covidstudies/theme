@@ -14,13 +14,13 @@ layout: default
         <p><time datetime="{{ page.date }}">{{ page.date | date: date_format }}</time></p>
         {% endif %}
       </div>
-        <h2><a href="{{ page.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ page.de.subtitle }}</a></h2>
-      <p>Autoren: {{ page.authors }}</p>
+        <h2><a href="{{ page.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ page.en.subtitle }}</a></h2>
+      <p>Authors: {{ page.authors }}</p>
       <blockquote cite="{{ page.credit }}">
-        <p>{{page.de.description | replace: '"', "'"}}</p>
+        <p>{{page.en.description | replace: '"', "'"}}</p>
       </blockquote>
       {% if page.de.tags and page.de.tags.size > 0 %}
-      <p>Schlüsselworte: {{ page.de.tags | join: ", " }}
+      <p>Keywords: {{ page.en.tags | join: ", " }}
       {% endif %}
     </article>
 
