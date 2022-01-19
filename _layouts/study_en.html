@@ -4,26 +4,4 @@ layout: default
 
 {{ content }}
 
-    <article id="{{ page.id }}">
-      <div>
-        <p>{{ page.title | strip_html }}</p>
-        {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
-        {% if page.status != "default" %}
-        <p><mark>{{ page.status }}</mark>&emsp;<time datetime="{{ page.date }}">{{ page.date | date: date_format }}</time></p>
-        {% else %}
-        <p><time datetime="{{ page.date }}">{{ page.date | date: date_format }}</time></p>
-        {% endif %}
-      </div>
-        <h2><a href="{{ page.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ page.en.subtitle }}</a></h2>
-      <p>Authors: {{ page.authors }}</p>
-      <blockquote cite="{{ page.credit }}">
-        <p>{{page.en.description | replace: '"', "'"}}</p>
-      </blockquote>
-      {% if page.de.tags and page.de.tags.size > 0 %}
-      <p>Keywords: {{ page.en.tags | join: ", " }}
-      {% endif %}
-    </article>
-
-    <aside>
-      <p>Übersetzt mit <a href="https://www.deepl.com" target="_blank">DeepL</a>.</p>
-    </aside>
+{% include list_de.md post=page %}
