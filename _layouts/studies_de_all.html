@@ -9,31 +9,7 @@ common-js:
 {{ content }}
 
 {% assign posts = site.studies | default: site.posts %}
-
 {% for post in posts reversed %}
-
-    <article id="{{ post.id }}">
-      <div>
-        <p>{{ post.title | strip_html }}</p>
-        {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
-        {% if post.status != "default" %}
-        <p>&emsp;<mark>{{ post.status }}</mark>&emsp;<time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time></p>
-        {% else %}
-        <p>&emsp;<time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time></p>
-        {% endif %}
-      </div>
-        <h2><a href="{{ post.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ post.de.subtitle }}</a></h2>
-      <p>Autoren: {{ post.authors }}</p>
-      <blockquote cite="{{ post.credit }}">
-        <p class="content">„{{post.de.description | replace: '"', "'"}}“</p>
-      </blockquote>
-      {% if post.de.tags and post.de.tags.size > 0 %}
-      <p>Schlüsselworte: {{ post.de.tags | join: ", " }}
-      {% endif %}
-    </article>
-
+{% include list_de.md post=post %}
 {% endfor %}
-
-    <aside>
-      <p>Übersetzt mit <a href="https://www.deepl.com" target="_blank">DeepL</a>.</p>
-    </aside>
+{% include aside_de.md %}
