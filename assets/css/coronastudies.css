@@ -61,6 +61,16 @@ p, ul, ol, dl, table {
   hyphens: auto;
 }
 
+sup {
+  vertical-align: super;
+  font-size: smaller;  
+}
+
+ul, ol, dl {
+  padding: 0 1rem;
+  margin: 2.5rem 0;
+}
+
 blockquote {
   margin: 0;
 }
