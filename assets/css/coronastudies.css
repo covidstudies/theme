@@ -62,8 +62,8 @@ p, ul, ol, dl, table {
 }
 
 sup, sup * {
-  vertical-align: super;
-  font-size: smaller;  
+  vertical-align: text-top;
+  font-size: smaller;
 }
 
 sup::before {
