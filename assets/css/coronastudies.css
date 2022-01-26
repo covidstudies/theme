@@ -62,16 +62,15 @@ p, ul, ol, dl, table {
 }
 
 sup, sup * {
-  vertical-align: super;
-  font-size: smaller;  
+  vertical-align: normal;
 }
 
 sup::before {
-  content: ' ';
+  content: ' [';
 }
 
 sup::after {
-  content: ' ';
+  content: '] ';
 }
 
 ul, ol, dl {
