@@ -48,9 +48,15 @@ img, video, audio {
   border: none;
 }
 
-h1, h2, h3, h4, h5, h6, h2 *, h3 *, h4 *, h5 *, h6 * {
+h1, h2, h3, h1 *, h2 * {
   vertical-align: top;
   text-transform: uppercase;
+  margin: 0;
+}
+
+h3, h4, h5, h6, h3 *, h4 *, h5 *, h6 * {
+  font-style: italic;
+  vertical-align: top;
   margin: 0;
 }
 
