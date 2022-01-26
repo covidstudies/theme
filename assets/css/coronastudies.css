@@ -66,6 +66,10 @@ sup, sup * {
   font-size: smaller;  
 }
 
+sup::before {
+  content: ' ';
+}
+
 sup::after {
   content: ' ';
 }
