@@ -66,6 +66,10 @@ sup, sup * {
   font-size: smaller;  
 }
 
+sup::after {
+  content: ' ';
+}
+
 ul, ol, dl {
   padding: 0 1rem;
   margin: 2.5rem 0;
