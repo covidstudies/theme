@@ -58,6 +58,7 @@ h3, h4, h5, h6, h3 *, h4 *, h5 *, h6 * {
   font-style: italic;
   vertical-align: top;
   margin: 0;
+  padding-left: 2px;
 }
 
 p, ul, ol, dl, table {
