@@ -10,12 +10,13 @@
         <p>&emsp;<time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time></p>
         {% endif %}
       </div>
-        <h2><a href="{{ post.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ post.de.subtitle }}</a></h2>
-      <p>Autoren: {{ post.authors }}</p>
+        <h2><a href="{{ post.credit }}" target="_blank"><div data-icon="ei-external-link" data-size="s"></div> {{ post.en.subtitle }}</a></h2>
+      <p>Authors: {{ post.authors }}</p>
       <blockquote cite="{{ post.credit }}">
-        <p class="content">„{{post.de.description | replace: '"', "'"}}“</p>
+        <p class="content_en">“{{post.en.description | replace: '"', "'"}}”</p>
       </blockquote>
-      {% if post.de.tags and post.de.tags.size > 0 %}
-      <p>Schlüsselworte: {{ post.de.tags | join: ", " }}
+      {% if post.en.tags and post.en.tags.size > 0 %}
+      <p>Keywords: {{ post.en.tags | join: ", " }}
       {% endif %}
+      <p>Group: <a href="/studies_en_{{ post.group | downcase }}.html#{{ post.id }}">{{ post.group }}</a>
     </article>
