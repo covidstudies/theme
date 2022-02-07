@@ -18,5 +18,5 @@
       {% if post.en.tags and post.en.tags.size > 0 %}
       <p>Keywords: {{ post.en.tags | join: ", " }}
       {% endif %}
-      <p>Group: <a href="/studies_en_{{ post.group | downcase }}.html#{{ post.id }}">{{ post.group }}</a></p>
+      <a href="/studies_en_{{ post.group | downcase }}.html#{{ post.id }}"><div data-icon="ei-paperclip" data-size="s"></div> {{ post.group }}</a>
     </article>
