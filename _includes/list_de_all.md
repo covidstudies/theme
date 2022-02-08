@@ -18,4 +18,5 @@
       {% if post.de.tags and post.de.tags.size > 0 %}
       <p>Schlüsselworte: {{ post.de.tags | join: ", " }}
       {% endif %}
+      <a href="/studies_de_{{ post.group | downcase }}.html#{{ post.id }}"><div data-icon="ei-paperclip" data-size="s"></div> {{ post.group }}</a>
     </article>

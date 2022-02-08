@@ -10,6 +10,6 @@ common-js:
 
 {% assign posts = site.studies | default: site.posts %}
 {% for post in posts reversed %}
-{% include list_de.md post=post %}
+{% include list_de_all.md post=post %}
 {% endfor %}
 {% include aside_de.md %}

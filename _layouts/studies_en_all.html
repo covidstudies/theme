@@ -10,5 +10,5 @@ common-js:
 
 {% assign posts = site.studies | default: site.posts %}
 {% for post in posts reversed %}
-{% include list_en.md post=post %}
+{% include list_en_all.md post=post %}
 {% endfor %}
