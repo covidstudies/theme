@@ -1,6 +1,12 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="{{ page.language | default: site.language | default: 'en' }}">
+
+{% include head.html type="page" %}
+
+<body class="post">
+{% include header.html type="page" %}
+
+<main>
 
     <article id="{{ page.id }}">
       <h2>{{ page.title | strip_html }}</h2>
@@ -41,3 +47,12 @@ layout: default
   {% endif %}
   </ul>
 </nav>
+
+</main>
+
+{% include footer.html %}
+{% include footer-scripts.html %}
+
+</body>
+
+</html>
