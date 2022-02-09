@@ -1,6 +1,6 @@
 {% assign post = include.post %}
     <a id="{{ post.id }}"></a>
-    <article>
+    <article id="{{ post.id }}-article">
       <div>
         <p>{{ post.title | strip_html }}</p>
         {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
