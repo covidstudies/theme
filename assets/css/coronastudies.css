@@ -30,6 +30,10 @@ body {
   background-color: white;
 }
 
+body.post h2 + p {
+  margin-bottom: 2.5rem;
+}
+
 button {
   color: blue;
   background-color: white;
@@ -56,6 +60,10 @@ h1, h2, h1 *, h2 * {
   vertical-align: top;
   text-transform: uppercase;
   margin: 0;
+}
+
+h2.subtitle {
+  margin-bottom: -2.5px;
 }
 
 h3, h4, h5, h6, h3 *, h4 *, h5 *, h6 * {
@@ -143,7 +151,7 @@ header {
   top: 0;
   left: 50%;
   width: calc(100% - 2rem);
-  max-width: calc(660px + 4rem + 4px);
+  max-width: calc(660px + 4rem);
   min-height: 6.25rem;
   transform: translateX(-50%);
   z-index: 666;
@@ -154,7 +162,7 @@ header {
 header figure {
   position: absolute;
   top: calc(1.25rem - (3.75rem / 100 * 18));
-  left: 2px;
+  left: 0.25rem;
   width: calc(3.75rem + (3.75rem / 100 * 36));
   margin: 0;
 }
@@ -162,7 +170,7 @@ header figure {
 header h1 {
   position: absolute;
   top: 1.25rem;
-  left: calc(3.75rem + (3.75rem / 100 * 36));
+  left: calc(3.75rem + (3.75rem / 100 * 36) + 0.25rem);
   margin: 0;
 }
 
@@ -176,7 +184,7 @@ header details {
   left: 0;
   width: 100%;
   height: 6.25rem;
-  padding: 0 2px;
+  padding: 0 0.25rem;
   z-index: -1;
 }
 
@@ -219,7 +227,7 @@ main {
 
 article {
   margin: 0 auto ;
-  padding: 2.5rem 0;
+  padding: 2.5rem 0.25rem;
   max-width: calc(660px + 4rem);
   border-bottom: 1px dotted black;
 }
@@ -280,7 +288,7 @@ main aside {
 
 footer {
   margin: 2.5rem auto;
-  padding: 0;  
+  padding: 0 0.25rem;  
   max-width: calc(660px + 4rem);
 }
 
@@ -315,6 +323,18 @@ div.icon {
   fill: blue;
 }
 
+aside.group {
+  margin: 0 0 -2.5px;
+  padding: 0;
+  max-width: auto;
+}
+
+aside.group p {
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+}
+
 /* Responsive Webdesign */
 
 @media screen and (max-width: calc(660px + 4rem)) {
@@ -337,4 +357,14 @@ div.icon {
     margin-bottom: calc(3.75rem + 2px);
   }
 
+  div.icon--s {
+    max-height: calc(25px / 100 * 88.88889);
+  }
+
+  aside.group {
+    margin-bottom: calc((25px / 100 * 88.88889) / -10);
+  }
+
 }
+
+

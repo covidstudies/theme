@@ -1,6 +1,6 @@
 {% assign post = include.post %}
     <a id="{{ post.id }}"></a>
-    <article>
+    <article id="{{ post.id }}-article">
       <div>
         <p>{{ post.title | strip_html }}</p>
         {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
@@ -16,7 +16,7 @@
         <p class="content_en">“{{post.en.description | replace: '"', "'"}}”</p>
       </blockquote>
       {% if post.en.tags and post.en.tags.size > 0 %}
-      <p>Keywords: {{ post.en.tags | join: ", " }}
+      <p>Keywords: {{ post.en.tags | join: ", " }}</p>
       {% endif %}
-      <a href="/studies_en_{{ post.group | downcase }}.html#{{ post.id }}"><div data-icon="ei-paperclip" data-size="s"></div> {{ site.data.groups[post.group]['en_name'] }}</a>
+      <aside class="group"><a href="/studies_en_{{ post.group | downcase }}.html#{{ post.id }}"><div data-icon="ei-chevron-right" data-size="s"></div><p>{{ post.group }}</p></a></aside>
     </article>
