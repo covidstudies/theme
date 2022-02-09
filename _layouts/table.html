@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ page.language | default: site.language | default: 'en' }}">
+
+{% include head.html type="page" %}
+
+<body class="table">
+{% include header.html type="page" %}
+
+<main>
+
+{{ content }}
+
+{% include aside_de.md %}
+</main>
+
+{% include footer.html %}
+{% include footer-scripts.html %}
+
+</body>
+
+</html>
