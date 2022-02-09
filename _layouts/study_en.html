@@ -1,7 +1,18 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
 
-{{ content }}
+{% include head_en.html type="page" %}
 
+<body class="study">
+{% include header_en.html type="page" %}
+
+<main>
 {% include list_de.md post=page %}
+</main>
+
+{% include footer_en.html %}
+{% include footer-scripts.html %}
+
+</body>
+
+</html>
