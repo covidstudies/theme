@@ -18,5 +18,5 @@
       {% if post.en.tags and post.en.tags.size > 0 %}
       <p>Keywords: {{ post.en.tags | join: ", " }}</p>
       {% endif %}
-      <aside class="group"><a href="/studies_en_{{ post.group | downcase }}.html#{{ post.id }}"><div data-icon="ei-chevron-right" data-size="s"></div><p>{{ post.group }}</p></a></aside>
+      <aside class="group"><a href="/studies_en_{{ post.group | downcase }}.html#{{ post.id }}"><div data-icon="ei-chevron-right" data-size="s"></div><p>{{ site.data.groups[post.group]['en_name'] }}</p></a></aside>
     </article>
