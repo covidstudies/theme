@@ -359,6 +359,7 @@ aside.group p {
 
   div.icon--s {
     max-height: calc(25px / 100 * 88.88889);
+    width: auto;
   }
 
   aside.group {
