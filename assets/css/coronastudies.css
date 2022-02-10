@@ -73,7 +73,7 @@ h3, h4, h5, h6, h3 *, h4 *, h5 *, h6 * {
 }
 
 p, ul, ol, dl, table {
-  margin: 0.625rem 0;
+  margin: 1.25rem 0;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
@@ -211,8 +211,17 @@ header details[open] nav ul {
   list-style: circle;
 }
 
+header details[open] nav h3 + ul {
+  margin-top: 1.25rem;
+}
+
 header details[open] nav li {
   line-height: 175%;
+  vertical-align: top;
+}
+
+header details[open] nav li div {
+  margin-top: 2.5px;
 }
 
 header ::selection {
@@ -230,6 +239,15 @@ article {
   padding: 2.5rem 0.25rem;
   max-width: calc(660px + 4rem);
   border-bottom: 1px dotted black;
+}
+
+div.search > article:first-of-type h3 {
+  display: none;
+}
+
+div.search > article:first-of-type {
+  border: none;  
+  margin-bottom: -2.5rem;
 }
 
 article:last-of-type {
@@ -321,6 +339,7 @@ address li:first-child {
 div.icon {
   display: inline-block !important;
   fill: blue;
+  vertical-align: text-bottom;
 }
 
 aside.group {
@@ -333,6 +352,30 @@ aside.group p {
   display: inline-block;
   margin: 0;
   vertical-align: top;
+}
+
+/* Suche */
+
+div.search form {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.search input[type=text] {
+  flex-grow: 10;
+  margin: 0 1rem 0 -0.25rem;
+  border: 1px dotted black;
+  border-radius: 0;
+  padding: 0 0.25rem;
+  line-height: 175%;
+}
+
+div.search input[type=submit] {
+  color: white;
+  background-color: blue;
+  border: none;
+  border-radius: 5px;
+  margin-right: -0.25rem;
 }
 
 /* Responsive Webdesign */
@@ -359,7 +402,7 @@ aside.group p {
 
   div.icon--s {
     max-height: calc(25px / 100 * 88.88889);
-    width: auto;
+    max-width: calc(25px / 100 * 88.88889);
   }
 
   aside.group {

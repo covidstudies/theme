@@ -4,37 +4,39 @@
 {% include head_en.html type="page" %}
 
 <body class="post">
-{% include header_en.html type="page" %}
+  {% include header_en.html type="page" %}
 
-<main>
+  <main>
     <article id="{{ page.id }}">
       <h2>{{ page.title | strip_html }}</h2>
       <p><time datetime="{{ post.date }}">{{ post.date | date: "%d. %B %Y" }}</time></p>
       {{ content }}
     </article>
-<nav>
-  <ul>
-  {% if page.next.url %}
-    <li>
-      <a href="{{ page.next.url | absolute_url }}">&larr; Newer posts</a>
-    </li>
-  {% else %}
-    <li></li>
-  {% endif %}
-  {% if page.previous.url %}
-    <li>
-      <a href="{{ page.previous.url | absolute_url }}">Older posts &rarr;</a>
-    </li>
-  {% endif %}
-  </ul>
-</nav>
+    <!--
+    Für die Pagination muß eine allgemeine Bedingung gelten: Nur wenn es mehr als einen Post gibt, soll die nav-Pagination angezeigt werden
+    -->
+    <nav>
+      <ul>
+        {% if page.next.url %}
+        <li>
+          <a href="{{ page.next.url | absolute_url }}">&larr; Newer posts</a>
+        </li>
+        {% else %}
+        <li></li>
+        {% endif %}
+        {% if page.previous.url %}
+        <li>
+          <a href="{{ page.previous.url | absolute_url }}">Older posts &rarr;</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
 
-</main>
+  </main>
 
-{% include footer_en.html %}
-{% include footer-scripts.html %}
+  {% include footer_en.html %}
+  {% include footer-scripts.html %}
 
 </body>
 
 </html>
-
