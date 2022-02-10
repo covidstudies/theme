@@ -5,7 +5,7 @@
         <p>{{ post.title | strip_html }}</p>
         {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
         {% if post.status != "default" %}
-        <p>&emsp;<mark>{{ post.status }}</mark>&emsp;<time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time></p>
+        <p>&emsp;<em>{{ post.status }}</em>&emsp;<time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time></p>
         {% else %}
         <p>&emsp;<time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time></p>
         {% endif %}
