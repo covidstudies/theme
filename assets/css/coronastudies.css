@@ -232,7 +232,9 @@ header ::selection {
 
 main {
   margin-top: 6.25rem;
+  /*
   min-height: calc(100vh - 6.25rem - 198.75px - 90px);
+  */
 }
 
 article {
