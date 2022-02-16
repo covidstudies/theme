@@ -232,6 +232,7 @@ header ::selection {
 
 main {
   margin-top: 6.25rem;
+  min-height: calc(100vh - 6.25rem - 198.75px - 90px);
 }
 
 article {
@@ -356,25 +357,39 @@ aside.group p {
 
 /* Suche */
 
+div.search {
+  max-width: calc(660px + 4rem);
+  margin: -1px auto 0;
+}
+/*
 div.search form {
   display: flex;
   justify-content: space-between;
 }
+*/
+div.search input:focus {
+  outline: none;
+}
+
+div.search input::placeholder,
+div.search input::-moz-placeholder,
+div.search input::-webkit-input-placeholder {
+  opacity: 1;
+}
 
 div.search input[type=text] {
+  /*
   flex-grow: 10;
   margin: 0 1rem 0 -0.25rem;
+  */
+  width: 100%;
   border: 1px dotted black;
   border-radius: 0;
   padding: 0 0.25rem;
   line-height: 175%;
 }
 
-div.search input[type=submit] {
-  color: white;
-  background-color: blue;
-  border: none;
-  border-radius: 5px;
+div.search button[type=submit] {
   margin-right: -0.25rem;
 }
 
@@ -410,5 +425,3 @@ div.search input[type=submit] {
   }
 
 }
-
-
