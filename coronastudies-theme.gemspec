@@ -3,8 +3,8 @@
 Gem::Specification.new do |spec|
   spec.name          = "coronastudies-theme"
   spec.version       = "0.1.0"
-  spec.authors       = ["Joerg Roth"]
-  spec.email         = ["joerg.roth@geo.uzh.ch"]
+  spec.authors       = ["coronastudies"]
+  spec.email         = ["info@coronastudies.org"]
 
   spec.summary       = "jekyll-theme for coronastudies.org"
   spec.homepage      = "https://github.com/covidstudies/theme"
